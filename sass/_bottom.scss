@@ -1,0 +1,53 @@
+@use "globals" as g;
+@use "util" as u;
+
+.bottom {
+  border-radius: u.em(10);
+  display: flex;
+  flex-direction: column;
+  gap: u.em(16);
+  text-align: center;
+
+  p {
+    font-weight: lighter;
+  }
+  span {
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  &__range {
+    padding: 3px;
+    border-radius: 50px;
+    background-color: g.$dark-blue-range;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+
+    &--span {
+      border-radius: 50px;
+      background: linear-gradient(g.$gradient-from, g.$gradient-to);
+      padding: 6px;
+      width: 70%;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        content: "";
+        height: 90%;
+        width: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+    }
+  }
+}

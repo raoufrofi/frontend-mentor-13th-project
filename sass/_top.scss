@@ -1,0 +1,32 @@
+@use "globals" as g;
+@use "util" as u;
+
+.top {
+  border-radius: 10px;
+  border-top-right-radius: 120px;
+
+  &__logo {
+    width: 150px;
+    margin-bottom: u.em(30);
+  }
+
+  &__list {
+    display: flex;
+    gap: u.em(20);
+
+    &-icons {
+      background-color: g.$very-dark-blue;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      padding: u.em(12);
+
+      &--document {
+        padding: u.em(14);
+      }
+    }
+  }
+}

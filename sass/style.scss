@@ -1,0 +1,52 @@
+@use "globals" as g;
+@use "util" as u;
+@use "top";
+@use "bottom";
+@use "absolute";
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  padding: u.em(48) 0;
+  background: {
+    color: g.$very-dark-blue;
+    image: url("../images/bg-mobile.png");
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include u.breakpoint(tab) {
+    background-image: url("../images/bg-desktop.png");
+    background-position: bottom;
+    background-size: contain;
+  }
+}
+
+main {
+  position: relative;
+  font-family: g.$raleway;
+  font-size: 14px;
+  width: min(350px, 90%);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: u.em(20);
+  color: #fff;
+  align-items: baseline;
+  align-items: end;
+
+  @include u.breakpoint(tab) {
+    grid-template-columns: 1.5fr 2.5fr;
+    grid-template-rows: auto;
+    width: min(85%, 1080px);
+  }
+
+  > * {
+    background-color: g.$dark-blue;
+    padding: u.em(48);
+  }
+}
